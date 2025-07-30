@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional styles for auth page */
+        .auth-page {
+            padding: 60px 0;
+        }
+        
+        .auth-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .auth-tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            background: #f9f9f9;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-tab.active {
+            background: white;
+            color: #d4a762;
+            border-bottom: 2px solid #d4a762;
+        }
+        
+        .auth-form {
+            padding: 30px;
+            display: none;
+        }
+        
+        .auth-form.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .forgot-password {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            color: #d4a762;
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        .social-login {
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .social-login p {
+            color: #777;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .social-login p::before,
+        .social-login p::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: #eee;
+        }
+        
+        .social-login p::before {
+            left: 0;
+        }
+        
+        .social-login p::after {
+            right: 0;
+        }
+        
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .social-btn {
+            flex: 1;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .social-btn.google {
+            background: #DB4437;
+        }
+        
+        .social-btn.facebook {
+            background: #4267B2;
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+        
+        .auth-footer a {
+            color: #d4a762;
+        }
+        
+        .error-message {
+            color: #f44336;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        
+        @media (max-width: 576px) {
+            .social-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="index.html">FashionHub</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="account.html"><i class="far fa-user"></i></a>
+                        <a href="account.html#wishlist" class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                            <span class="wishlist-count">0</span>
+                        </a>
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li class="mega-menu-trigger">
+                        <a href="#" class="mega-menu-link">Categories <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-container">
+                                <div class="mega-menu-grid">
+                                    <div class="mega-menu-col">
+                                        <h4>Men's Fashion</h4>
+                                        <ul>
+                                            <li><a href="shop.html?category=shirts">Shirts</a></li>
+                                            <li><a href="shop.html?category=t-shirts">T-Shirts</a></li>
+                                            <li><a href="shop.html?category=jeans">Jeans</a></li>
+                                            <li><a href="shop.html?category=jackets">Jackets</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4>Women's Fashion</h4>
+                                        <ul>
+                                            <li><a href="shop.html?category=dresses">Dresses</a></li>
+                                            <li><a href="shop.html?category=tops">Tops</a></li>
+                                            <li><a href="shop.html?category=skirts">Skirts</a></li>
+                                            <li><a href="shop.html?category=w-jeans">Jeans</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4>Accessories</h4>
+                                        <ul>
+                                            <li><a href="shop.html?category=watches">Watches</a></li>
+                                            <li><a href="shop.html?category=bags">Bags</a></li>
+                                            <li><a href="shop.html?category=hats">Hats</a></li>
+                                            <li><a href="shop.html?category=belts">Belts</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4>Featured</h4>
+                                        <ul>
+                                            <li><a href="shop.html?category=new-arrivals">New Arrivals</a></li>
+                                            <li><a href="shop.html?category=best-sellers">Best Sellers</a></li>
+                                            <li><a href="shop.html?category=sale">Sale</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth-page">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="register">Register</button>
+                </div>
+                
+                <!-- Login Form -->
+                <form class="auth-form active" id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" required>
+                        <div class="error-message" id="login-email-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                        <div class="error-message" id="login-password-error"></div>
+                        <a href="#" class="forgot-password" id="show-reset-form">Forgot password?</a>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    
+                    <div class="social-login">
+                        <p>Or login with</p>
+                        <div class="social-buttons">
+                            <a href="#" class="social-btn google"><i class="fab fa-google"></i> Google</a>
+                            <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        </div>
+                    </div>
+                    
+                    <div class="auth-footer">
+                        Don't have an account? <a href="#" class="switch-tab" data-tab="register">Register here</a>
+                    </div>
+                </form>
+                
+                <!-- Registration Form -->
+                <form class="auth-form" id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Full Name</label>
+                        <input type="text" id="register-name" required>
+                        <div class="error-message" id="register-name-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-email">Email Address</label>
+                        <input type="email" id="register-email" required>
+                        <div class="error-message" id="register-email-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" required>
+                        <div class="error-message" id="register-password-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirm Password</label>
+                        <input type="password" id="register-confirm-password" required>
+                        <div class="error-message" id="register-confirm-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" id="accept-terms" required>
+                        <label for="accept-terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                        <div class="error-message" id="terms-error"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    
+                    <div class="auth-footer">
+                        Already have an account? <a href="#" class="switch-tab" data-tab="login">Login here</a>
+                    </div>
+                </form>
+                
+                <!-- Password Reset Form -->
+                <form class="auth-form" id="reset-form">
+                    <div class="form-group">
+                        <label for="reset-email">Email Address</label>
+                        <input type="email" id="reset-email" required>
+                        <div class="error-message" id="reset-email-error"></div>
+                    </div>
+                    
+                    <p>We will send you a link to reset your password.</p>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
+                    
+                    <div class="auth-footer">
+                        <a href="#" class="switch-tab" data-tab="login">Back to login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Special Offers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter">
+                    <h3>Subscribe to Newsletter</h3>
+                    <p>Get updates on new arrivals and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FashionHub. All rights reserved.</p>
+                <div class="payment-methods">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" alt="PayPal">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple Pay">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // User Authentication System
+        const auth = {
+            currentUser: null,
+            
+            init: function() {
+                // Load remembered email if exists
+                const rememberedEmail = localStorage.getItem('rememberedEmail');
+                if (rememberedEmail) {
+                    document.getElementById('login-email').value = rememberedEmail;
+                    document.getElementById('remember-me').checked = true;
+                }
+                
+                // Form submissions
+                document.getElementById('login-form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handleLogin();
+                });
+                
+                document.getElementById('register-form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handleRegister();
+                });
+                
+                document.getElementById('reset-form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handlePasswordReset();
+                });
+                
+                // Tab switching
+                const tabs = document.querySelectorAll('.auth-tab');
+                const forms = document.querySelectorAll('.auth-form');
+                
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        const tabId = tab.dataset.tab;
+                        
+                        // Update active tab
+                        tabs.forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+                        
+                        // Show corresponding form
+                        forms.forEach(form => form.classList.remove('active'));
+                        document.getElementById(`${tabId}-form`).classList.add('active');
+                    });
+                });
+                
+                // Switch tab links
+                document.querySelectorAll('.switch-tab').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const tabId = link.dataset.tab;
+                        document.querySelector(`.auth-tab[data-tab="${tabId}"]`).click();
+                    });
+                });
+                
+                // Show reset form
+                document.getElementById('show-reset-form')?.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    tabs.forEach(t => t.classList.remove('active'));
+                    forms.forEach(form => form.classList.remove('active'));
+                    document.getElementById('reset-form').classList.add('active');
+                });
+            },
+            
+            handleLogin: function() {
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+                const rememberMe = document.getElementById('remember-me').checked;
+                
+                // Clear previous errors
+                document.getElementById('login-email-error').style.display = 'none';
+                document.getElementById('login-password-error').style.display = 'none';
+                
+                // Basic validation
+                if (!email) {
+                    document.getElementById('login-email-error').textContent = 'Email is required';
+                    document.getElementById('login-email-error').style.display = 'block';
+                    return;
+                }
+                
+                if (!password) {
+                    document.getElementById('login-password-error').textContent = 'Password is required';
+                    document.getElementById('login-password-error').style.display = 'block';
+                    return;
+                }
+                
+                // In a real app, this would be an API call
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+                const user = users.find(u => u.email === email && u.password === password);
+                
+                if (user) {
+                    this.currentUser = user;
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    
+                    if (rememberMe) {
+                        localStorage.setItem('rememberedEmail', email);
+                    } else {
+                        localStorage.removeItem('rememberedEmail');
+                    }
+                    
+                    // Redirect to account page
+                    window.location.href = 'account.html';
+                } else {
+                    document.getElementById('login-password-error').textContent = 'Invalid email or password';
+                    document.getElementById('login-password-error').style.display = 'block';
+                }
+            },
+            
+            handleRegister: function() {
+                const name = document.getElementById('register-name').value;
+                const email = document.getElementById('register-email').value;
+                const password = document.getElementById('register-password').value;
+                const confirmPassword = document.getElementById('register-confirm-password').value;
+                const acceptTerms = document.getElementById('accept-terms').checked;
+                
+                // Clear previous errors
+                document.querySelectorAll('#register-form .error-message').forEach(el => {
+                    el.style.display = 'none';
+                });
+                
+                // Validation
+                let isValid = true;
+                
+                if (!name) {
+                    document.getElementById('register-name-error').textContent = 'Name is required';
+                    document.getElementById('register-name-error').style.display = 'block';
+                    isValid = false;
+                }
+                
+                if (!email) {
+                    document.getElementById('register-email-error').textContent = 'Email is required';
+                    document.getElementById('register-email-error').style.display = 'block';
+                    isValid = false;
+                } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+                    document.getElementById('register-email-error').textContent = 'Email is invalid';
+                    document.getElementById('register-email-error').style.display = 'block';
+                    isValid = false;
+                }
+                
+                if (!password) {
+                    document.getElementById('register-password-error').textContent = 'Password is required';
+                    document.getElementById('register-password-error').style.display = 'block';
+                    isValid = false;
+                } else if (password.length < 6) {
+                    document.getElementById('register-password-error').textContent = 'Password must be at least 6 characters';
+                    document.getElementById('register-password-error').style.display = 'block';
+                    isValid = false;
+                }
+                
+                if (password !== confirmPassword) {
+                    document.getElementById('register-confirm-error').textContent = 'Passwords do not match';
+                    document.getElementById('register-confirm-error').style.display = 'block';
+                    isValid = false;
+                }
+                
+                if (!acceptTerms) {
+                    document.getElementById('terms-error').textContent = 'You must accept the terms';
+                    document.getElementById('terms-error').style.display = 'block';
+                    isValid = false;
+                }
+                
+                if (!isValid) return;
+                
+                // Check if user already exists
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+                if (users.some(u => u.email === email)) {
+                    document.getElementById('register-email-error').textContent = 'Email already registered';
+                    document.getElementById('register-email-error').style.display = 'block';
+                    return;
+                }
+                
+                // Create new user
+                const newUser = {
+                    id: Date.now().toString(),
+                    name: name,
+                    email: email,
+                    password: password,
+                    joinDate: new Date().toISOString(),
+                    avatar: 'https://ui-avatars.com/api/?name=' + encodeURIComponent(name) + '&background=random',
+                    addresses: {
+                        billing: null,
+                        shipping: null
+                    },
+                    orders: [],
+                    wishlist: []
+                };
+                
+                users.push(newUser);
+                localStorage.setItem('users', JSON.stringify(users));
+                
+                // Auto-login after registration
+                this.currentUser = newUser;
+                localStorage.setItem('currentUser', JSON.stringify(newUser));
+                
+                // Redirect to account page
+                window.location.href = 'account.html';
+            },
+            
+            handlePasswordReset: function() {
+                const email = document.getElementById('reset-email').value;
+                
+                // Clear previous error
+                document.getElementById('reset-email-error').style.display = 'none';
+                
+                if (!email) {
+                    document.getElementById('reset-email-error').textContent = 'Email is required';
+                    document.getElementById('reset-email-error').style.display = 'block';
+                    return;
+                }
+                
+                // In a real app, this would send an email
+                alert(`Password reset link sent to ${email}`);
+                document.querySelector('.auth-tab[data-tab="login"]').click();
+            }
+        };
+        
+        // Initialize auth system when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            auth.init();
+            
+            // Initialize cart count
+            updateCartCount();
+        });
+        
+        // Shopping Cart
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+        
+        function updateCartCount() {
+            const cartCountElement = document.querySelector('.cart-count');
+            if (cartCountElement) {
+                cartCountElement.textContent = cartCount;
+            }
+        }
+        
+        // Listen for storage events to update count when cart changes in other tabs
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'cart') {
+                cart = JSON.parse(e.newValue) || [];
+                cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+                updateCartCount();
+            }
+        });
+    </script>
+</body>
+</html>

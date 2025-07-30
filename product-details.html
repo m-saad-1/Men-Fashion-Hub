@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub - Premium Clothing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+   <header class="main-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="index.html">FashionHub</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="account.html"><i class="far fa-user"></i></a>
+                        <a href="account.html#wishlist" class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                            <span class="wishlist-count">0</span>
+                        </a>
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li class="mega-menu-trigger">
+                        <a href="#" class="mega-menu-link">Categories <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-container">
+                                <div class="mega-menu-grid">
+                                    <div class="mega-menu-col">
+                                        <h4>Men's Fashion</h4>
+                                        <ul>
+                                            <li><a href="shop.html?category=shirts">Shirts</a></li>
+                                            <li><a href="shop.html?category=t-shirts">T-Shirts</a></li>
+                                            <li><a href="shop.html?category=jeans">Jeans</a></li>
+                                            <li><a href="shop.html?category=jackets">Jackets</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4>Women's Fashion</h4>
+                                        <ul>
+                                            <li><a href="shop.html?category=dresses">Dresses</a></li>
+                                            <li><a href="shop.html?category=tops">Tops</a></li>
+                                            <li><a href="shop.html?category=skirts">Skirts</a></li>
+                                            <li><a href="shop.html?category=w-jeans">Jeans</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4>Accessories</h4>
+                                        <ul>
+                                            <li><a href="shop.html?category=watches">Watches</a></li>
+                                            <li><a href="shop.html?category=bags">Bags</a></li>
+                                            <li><a href="shop.html?category=hats">Hats</a></li>
+                                            <li><a href="shop.html?category=belts">Belts</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4>Featured</h4>
+                                        <ul>
+                                            <li><a href="shop.html?category=new-arrivals">New Arrivals</a></li>
+                                            <li><a href="shop.html?category=best-sellers">Best Sellers</a></li>
+                                            <li><a href="shop.html?category=sale">Sale</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+<main class="product-page">
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a> / 
+            <a href="shop.html">Shop</a> / 
+            <a href="shop.html?category=shirts">Shirts</a> / 
+            <span>Premium Cotton Shirt</span>
+        </div>
+        
+        <div class="product-details">
+            <!-- Product Gallery -->
+            <div class="product-gallery">
+                <div class="gallery-thumbnails">
+                    <div class="thumb active"><img src="images/products/shirt-1.jpg" alt="Product Thumbnail 1"></div>
+                    <div class="thumb"><img src="images/products/shirt-2.jpg" alt="Product Thumbnail 2"></div>
+                    <div class="thumb"><img src="images/products/shirt-3.jpg" alt="Product Thumbnail 3"></div>
+                    <div class="thumb"><img src="images/products/shirt-4.jpg" alt="Product Thumbnail 4"></div>
+                </div>
+                <div class="gallery-main">
+                    <img src="images/products/shirt-1.jpg" alt="Premium Cotton Shirt" id="mainProductImage">
+                    <button class="zoom-btn"><i class="fas fa-search-plus"></i></button>
+                    <div class="badges">
+                        <span class="badge new">New</span>
+                        <span class="badge sale">-20%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Info -->
+            <div class="product-info">
+                <h1 class="product-title">Premium Cotton Shirt</h1>
+                <div class="product-meta">
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <a href="#reviews" class="review-count">24 reviews</a>
+                    </div>
+                    <div class="sku">SKU: FH-SHIRT-001</div>
+                    <div class="availability in-stock">In Stock</div>
+                </div>
+                
+                <div class="product-price">
+                    <span class="current-price">$59.99</span>
+                    <span class="old-price">$74.99</span>
+                    <span class="discount">Save 20%</span>
+                </div>
+                
+                <div class="product-description">
+                    <p>Our premium cotton shirt is crafted from 100% organic cotton for maximum comfort and breathability. The tailored fit and reinforced stitching ensure durability while maintaining a stylish appearance.</p>
+                    
+                    <div class="details-accordion">
+                        <div class="accordion-item active">
+                            <button class="accordion-header">Fabric & Care <i class="fas fa-chevron-down"></i></button>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>100% Organic Cotton</li>
+                                    <li>Machine wash cold with like colors</li>
+                                    <li>Line dry or tumble dry low</li>
+                                    <li>Iron on medium heat if needed</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header">Size & Fit <i class="fas fa-chevron-down"></i></button>
+                            <div class="accordion-content">
+                                <p>Regular fit. Model is 6'2" wearing size Medium.</p>
+                                <a href="#" class="size-guide-link">View Size Guide</a>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header">Shipping & Returns <i class="fas fa-chevron-down"></i></button>
+                            <div class="accordion-content">
+                                <p>Free shipping on orders over $50. Easy 30-day returns.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-actions">
+                    <div class="size-selector">
+                        <label>Size:</label>
+                        <div class="size-options">
+                            <button class="size-option">XS</button>
+                            <button class="size-option">S</button>
+                            <button class="size-option active">M</button>
+                            <button class="size-option">L</button>
+                            <button class="size-option">XL</button>
+                        </div>
+                    </div>
+                    
+                    <div class="color-selector">
+                        <label>Color:</label>
+                        <div class="color-options">
+                            <button class="color-option active" style="background-color: #3a3a3a;" data-color="Black"></button>
+                            <button class="color-option" style="background-color: #5a8ac1;" data-color="Navy"></button>
+                            <button class="color-option" style="background-color: #e6e6e6;" data-color="White"></button>
+                        </div>
+                    </div>
+                    
+                    <div class="quantity-selector">
+                        <label>Quantity:</label>
+                        <div class="qty-input">
+                            <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                            <input type="number" value="1" min="1">
+                            <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        <button class="btn btn-outline add-to-wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                
+                <div class="product-share">
+                    <span>Share:</span>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product Tabs -->
+        <div class="product-tabs">
+            <ul class="tab-nav">
+                <li class="active" data-tab="description">Description</li>
+                <li data-tab="additional-info">Additional Information</li>
+                <li data-tab="reviews">Reviews (24)</li>
+            </ul>
+            
+            <div class="tab-content">
+                <div class="tab-pane active" id="description">
+                    <h3>Product Description</h3>
+                    <p>Our premium cotton shirt is designed for both comfort and style. The fabric is soft against the skin while maintaining its shape wash after wash. The classic cut makes it versatile for both casual and formal occasions.</p>
+                    <ul>
+                        <li>100% organic cotton</li>
+                        <li>Button-down collar</li>
+                        <li>Single chest pocket</li>
+                        <li>Classic straight hem</li>
+                        <li>Reinforced stitching at stress points</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-pane" id="additional-info">
+                    <h3>Additional Information</h3>
+                    <table>
+                        <tr>
+                            <th>Material</th>
+                            <td>100% Organic Cotton</td>
+                        </tr>
+                        <tr>
+                            <th>Fit</th>
+                            <td>Regular Fit</td>
+                        </tr>
+                        <tr>
+                            <th>Pattern</th>
+                            <td>Solid</td>
+                        </tr>
+                        <tr>
+                            <th>Closure</th>
+                            <td>Button Front</td>
+                        </tr>
+                        <tr>
+                            <th>Care Instructions</th>
+                            <td>Machine Wash</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="tab-pane" id="reviews">
+                    <div class="review-form">
+                        <h3>Add a Review</h3>
+                        <form>
+                            <div class="form-group">
+                                <label>Your Rating</label>
+                                <div class="rating-input">
+                                    <input type="radio" id="star5" name="rating" value="5">
+                                    <label for="star5"><i class="fas fa-star"></i></label>
+                                    <input type="radio" id="star4" name="rating" value="4">
+                                    <label for="star4"><i class="fas fa-star"></i></label>
+                                    <input type="radio" id="star3" name="rating" value="3">
+                                    <label for="star3"><i class="fas fa-star"></i></label>
+                                    <input type="radio" id="star2" name="rating" value="2">
+                                    <label for="star2"><i class="fas fa-star"></i></label>
+                                    <input type="radio" id="star1" name="rating" value="1">
+                                    <label for="star1"><i class="fas fa-star"></i></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-text">Your Review</label>
+                                <textarea id="review-text" rows="5"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="review-name">Name</label>
+                                    <input type="text" id="review-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="review-email">Email</label>
+                                    <input type="email" id="review-email">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit Review</button>
+                        </form>
+                    </div>
+                    
+                    <div class="review-list">
+                        <h3>Customer Reviews</h3>
+                        <div class="review">
+                            <div class="review-header">
+                                <div class="review-author">John D.</div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="review-date">October 12, 2023</div>
+                            </div>
+                            <div class="review-title">Perfect fit and quality</div>
+                            <div class="review-content">
+                                <p>This shirt exceeded my expectations. The fabric is soft yet durable, and the fit is perfect. I'll definitely be buying more colors.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="review">
+                            <div class="review-header">
+                                <div class="review-author">Sarah M.</div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <div class="review-date">September 28, 2023</div>
+                            </div>
+                            <div class="review-title">Great shirt, runs slightly large</div>
+                            <div class="review-content">
+                                <p>Love the quality of this shirt, but it runs slightly large compared to other brands. I'd recommend sizing down if you're between sizes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Related Products -->
+        <section class="related-products">
+            <h2 class="section-title">You May Also Like</h2>
+            <div class="product-grid">
+                <!-- Related products would be loaded via JavaScript -->
+            </div>
+        </section>
+    </div>
+</main>
+
+
+    <!-- Footer -->
+       <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="shop.html?category=new-arrivals">New Arrivals</a></li>
+                        <li><a href="shop.html?category=best-sellers">Best Sellers</a></li>
+                        <li><a href="shop.html?category=sale">Special Offers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter">
+                    <h3>Subscribe to Newsletter</h3>
+                    <p>Get updates on new arrivals and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FashionHub. All rights reserved.</p>
+                <div class="payment-methods">
+                    <img src="images/payment/visa.png" alt="Visa">
+                    <img src="images/payment/mastercard.png" alt="Mastercard">
+                    <img src="images/payment/paypal.png" alt="PayPal">
+                    <img src="images/payment/apple-pay.png" alt="Apple Pay">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    // Add to cart button
+    document.addEventListener('DOMContentLoaded', function() {
+        const addToCartBtn = document.querySelector('.add-to-cart');
+        const addToWishlistBtn = document.querySelector('.add-to-wishlist');
+        
+        if (addToCartBtn) {
+            addToCartBtn.addEventListener('click', function() {
+                // Get product details
+                const productId = 1; // In a real app, this would come from the product data
+                const productName = document.querySelector('.product-title').textContent;
+                const price = parseFloat(document.querySelector('.current-price').textContent.replace('$', ''));
+                const quantity = parseInt(document.querySelector('.qty-input input').value);
+                const size = document.querySelector('.size-option.active')?.textContent || 'M';
+                const color = document.querySelector('.color-option.active')?.getAttribute('data-color') || 'Black';
+                
+                // Get current cart from localStorage
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                // Check if product is already in cart
+                const existingItem = cart.find(item => item.id === productId && item.size === size && item.color === color);
+                
+                if (existingItem) {
+                    // Increase quantity
+                    existingItem.quantity += quantity;
+                } else {
+                    // Add new item to cart
+                    cart.push({
+                        id: productId,
+                        name: productName,
+                        price: price,
+                        quantity: quantity,
+                        size: size,
+                        color: color,
+                        image: 'images/products/shirt-1.jpg'
+                    });
+                }
+                
+                // Save to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                // Update cart count
+                updateCartCount();
+                
+                // Show added to cart message
+                showAddedToCartMessage();
+            });
+        }
+        
+        if (addToWishlistBtn) {
+            addToWishlistBtn.addEventListener('click', function() {
+                const productId = 1; // In a real app, this would come from the product data
+                
+                // Get current wishlist from localStorage
+                let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                
+                // Check if product is already in wishlist
+                const existingIndex = wishlist.findIndex(item => item.id === productId);
+                
+                if (existingIndex >= 0) {
+                    // Remove from wishlist
+                    wishlist.splice(existingIndex, 1);
+                    addToWishlistBtn.innerHTML = '<i class="far fa-heart"></i>';
+                } else {
+                    // Add to wishlist
+                    wishlist.push({ id: productId });
+                    addToWishlistBtn.innerHTML = '<i class="fas fa-heart"></i>';
+                }
+                
+                // Save to localStorage
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                
+                // Update wishlist count
+                updateWishlistCount();
+            });
+        }
+        
+        // Load related products
+        if (typeof loadProducts === 'function') {
+            loadProducts();
+        }
+    });
+
+         // Toggle wishlist status
+        function toggleWishlist(productCard, product) {
+            if (productCard.classList.contains('in-wishlist')) {
+                productCard.classList.remove('in-wishlist');
+                productCard.querySelector('.add-to-wishlist').innerHTML = '<i class="far fa-heart"></i>';
+                console.log(`Removed ${product.title} from wishlist`);
+            } else {
+                productCard.classList.add('in-wishlist');
+                productCard.querySelector('.add-to-wishlist').innerHTML = '<i class="fas fa-heart"></i>';
+                console.log(`Added ${product.title} to wishlist`);
+            }
+        }
+        
+        // Add product to cart
+        function addToCart(product, quantity = 1, size = null, color = null) {
+            // Check if product is already in cart with same size and color
+            const existingItemIndex = cart.findIndex(item => 
+                item.id === product.id && 
+                item.size === size && 
+                item.color === color
+            );
+            
+            if (existingItemIndex >= 0) {
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                cart.push({
+                    id: product.id,
+                    title: product.title,
+                    price: product.price,
+                    image: product.image,
+                    size: size,
+                    color: color,
+                    quantity: quantity
+                });
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update cart count
+            cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            updateCartCount();
+            
+            // Show notification
+            showCartNotification(product);
+            
+            console.log(`Added ${product.title} to cart`);
+        }
+        
+        // Update cart count in header
+        function updateCartCount() {
+            // In a real implementation, this would update the cart icon in the header
+            console.log(`Cart updated. Total items: ${cartCount}`);
+        }
+        
+        // Show cart notification
+        function showCartNotification(product) {
+            const notification = document.createElement('div');
+            notification.className = 'cart-notification';
+            notification.innerHTML = `
+                <p>${product.title} added to cart!</p>
+                <a href="cart.html">View Cart</a>
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 10);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+            // Cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to update cart count in header
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+                document.querySelector('.cart-count').textContent = cartCount;
+            }
+
+            // Initialize cart count
+            updateCartCount();
+
+            // Listen for storage events to update count when cart changes in other tabs
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'cart') {
+                    updateCartCount();
+                }
+            });
+        });
+    </script>
+</script>
+</body>
+</html>
