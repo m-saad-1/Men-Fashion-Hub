@@ -1,0 +1,157 @@
+<style>
+    /* Footer */
+    .main-footer {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 60px 0 0;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .footer-col h3 {
+        color: var(--white);
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+    }
+
+    .footer-col ul {
+        list-style: none;
+    }
+
+    .footer-col li {
+        margin-bottom: 10px;
+    }
+
+    .footer-col a {
+        color: #ccc;
+        transition: var(--transition);
+    }
+
+    .footer-col a:hover {
+        color: var(--secondary-color);
+    }
+
+    .newsletter-form {
+        display: flex;
+        margin-top: 15px;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        outline: none;
+    }
+
+    .newsletter-form button {
+        background-color: var(--secondary-color);
+        color: var(--white);
+        border: none;
+        padding: 0 15px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: var(--white);
+        transition: var(--transition);
+    }
+
+    .social-links a:hover {
+        background-color: var(--secondary-color);
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .payment-methods {
+        display: flex;
+        gap: 10px;
+    }
+
+    .payment-methods img {
+        height: 25px;
+        width: auto;
+    }
+</style>
+
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="shop.html">All Products</a></li>
+                    <li><a href="shop.html?category=new-arrivals">New Arrivals</a></li>
+                    <li><a href="shop.html?category=best-sellers">Best Sellers</a></li>
+                    <li><a href="shop.html?category=sale">Special Offers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter">
+                <h3>Subscribe to Newsletter</h3>
+                <p>Get updates on new arrivals and special offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 FashionHub. All rights reserved.</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa" title="Visa"></i>
+                <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                <i class="fab fa-cc-paypal" title="PayPal"></i>
+                <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+            </div>
+        </div>
+    </div>
+</footer>

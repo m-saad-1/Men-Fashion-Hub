@@ -301,9 +301,14 @@ function updateCartCount() {
         
         cartCount.textContent = totalItems;
         cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+        
+        // Also update the checkout button visibility
+        const proceedCheckout = document.getElementById('proceedCheckout');
+        if (proceedCheckout) {
+            proceedCheckout.style.display = totalItems > 0 ? 'block' : 'none';
+        }
     }
-}
-
+};
 // Update wishlist count
 function updateWishlistCount() {
     const wishlistCount = document.querySelector('.wishlist-count');
@@ -350,4 +355,36 @@ function generateStars(rating) {
     }
     
     return stars;
+}
+
+
+ setupCheckout();
+// Checkout functionality
+function setupCheckout() {
+    const proceedCheckout = document.getElementById('proceedCheckout');
+    
+    if (proceedCheckout) {
+        proceedCheckout.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            // Calculate total including shipping
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shippingOption = document.querySelector('input[name="shipping"]:checked');
+            const shippingCost = shippingOption && shippingOption.id === 'express-shipping' ? 9.99 : 0;
+            const total = subtotal + shippingCost;
+            
+            // Save the total to localStorage
+            localStorage.setItem('cartTotal', total.toFixed(2));
+            
+            // Redirect to checkout page
+            window.location.href = 'checkout.html';
+        });
+    }
 }

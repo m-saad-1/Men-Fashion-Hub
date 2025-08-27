@@ -153,6 +153,263 @@
             color: #777;
         }
         
+        /* ORDERS STYLING */
+        .orders-container {
+            margin-top: 20px;
+        }
+        
+        .order-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #f9f9f9;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-info {
+            flex: 1;
+        }
+        
+        .order-number {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #2a2a2a;
+        }
+        
+        .order-date {
+            color: #777;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .order-status {
+            margin-left: 15px;
+        }
+        
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .status-badge.processing {
+            background-color: #fff8e1;
+            color: #ff9800;
+        }
+        
+        .status-badge.completed {
+            background-color: #e6f7ee;
+            color: #4caf50;
+        }
+        
+        .status-badge.shipped {
+            background-color: #e3f2fd;
+            color: #2196f3;
+        }
+        
+        .status-badge.cancelled {
+            background-color: #ffebee;
+            color: #f44336;
+        }
+        
+        .order-items {
+            padding: 15px 20px;
+        }
+        
+        .order-item-preview {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .order-item-preview:last-child {
+            margin-bottom: 0;
+        }
+        
+        .order-item-preview .item-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .item-info {
+            flex: 1;
+        }
+        
+        .item-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .item-quantity {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .more-items {
+            text-align: center;
+            padding: 10px;
+            color: #777;
+            font-size: 0.9rem;
+            background: #f9f9f9;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .order-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .order-total {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #2a2a2a;
+        }
+        
+        .order-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .order-details {
+            padding: 0 20px 20px;
+            border-top: 1px solid #eee;
+            background: #f9f9f9;
+        }
+        
+        .details-section {
+            margin-bottom: 20px;
+        }
+        
+        .details-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .details-section h5 {
+            margin: 0 0 10px 0;
+            font-size: 1rem;
+            color: #2a2a2a;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .detail-item .item-info {
+            flex: 1;
+        }
+        
+        .item-variant {
+            color: #777;
+            font-size: 0.9rem;
+            margin: 3px 0;
+        }
+        
+        .item-price {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .item-total {
+            font-weight: 600;
+            color: #2a2a2a;
+        }
+        
+        .order-summary {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .summary-row.total {
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        
+        .payment-status {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .payment-status.paid {
+            background-color: #e6f7ee;
+            color: #4caf50;
+        }
+        
+        .payment-status.pending {
+            background-color: #fff8e1;
+            color: #ff9800;
+        }
+        
+        .payment-status.failed {
+            background-color: #ffebee;
+            color: #f44336;
+        }
+        
+        .empty-orders {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .empty-orders i {
+            font-size: 3rem;
+            color: #d4a762;
+            margin-bottom: 20px;
+        }
+        
+        .empty-orders h3 {
+            margin-bottom: 10px;
+            color: #2a2a2a;
+        }
+        
+        .empty-orders p {
+            color: #777;
+            margin-bottom: 20px;
+        }
+        
         .orders-table {
             width: 100%;
             border-collapse: collapse;
@@ -1008,7 +1265,27 @@
                 flex-direction: column;
                 gap: 0;
             }
+            
+            .order-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .order-footer {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .order-actions {
+                width: 100%;
+                justify-content: flex-start;
+            }
         }
+        
+
+        
     </style>
 </head>
 <body>
@@ -1154,7 +1431,6 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-pinterest-p"></i></a>
                     </div>
-                </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2023 FashionHub. All rights reserved.</p>
@@ -1305,8 +1581,9 @@
 
 
     <script>
-    // Product Data - Same as in shop.html
- const products = [
+        
+// Product Data - Same as in shop.html
+const products = [
     {
         id: 1,
         title: "Premium Cotton Shirt",
@@ -1643,100 +1920,117 @@
     }
 ];
 
-
-   // User Authentication System
+// API Configuration
+const API_BASE = window.location.origin + '/fashionhub-old/api';
+// User Authentication System
 const auth = {
     currentUser: null,
+    apiBaseUrl: window.location.pathname.includes('fashionhub-old') 
+               ? '/fashionhub-old/api' 
+               : '/api',
     
-    init: function() {
-        // Load user from localStorage
-        this.currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
-        this.updateUI();
-        
-        // Listen for storage events to handle logout from other tabs
-        window.addEventListener('storage', (e) => {
-            if (e.key === 'currentUser') {
-                this.currentUser = JSON.parse(e.newValue);
-                this.updateUI();
-            }
-        });
-    },
-    
-    login: function(email, password, rememberMe) {
-        // In a real app, this would be an API call
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        const user = users.find(u => u.email === email && u.password === password);
-        
-        if (user) {
-            this.currentUser = user;
-            localStorage.setItem('currentUser', JSON.stringify(user));
+    init: async function() {
+        try {
+            // Check server-side authentication
+            const response = await fetch(`${this.apiBaseUrl}/check_auth.php`, {
+                credentials: 'include'
+            });
             
-            if (rememberMe) {
-                localStorage.setItem('rememberedEmail', email);
-            } else {
-                localStorage.removeItem('rememberedEmail');
+            if (response.ok) {
+                const data = await response.json();
+                if (data.status === 'success') {
+                    this.currentUser = {
+                        ...data.user,
+                        avatar: 'https://ui-avatars.com/api/?name=' + encodeURIComponent(data.user.name) + '&background=random',
+                        joinDate: new Date().toISOString(),
+                        orders: [],
+                        wishlist: [],
+                        addresses: {
+                            billing: null,
+                            shipping: null
+                        }
+                    };
+                    
+                    // Load wishlist items and orders from database
+                    await this.loadWishlistItems();
+                    await loadOrders();
+                    
+                    // Load additional user data from localStorage if available
+                    const localUserData = JSON.parse(localStorage.getItem('currentUser'));
+                    if (localUserData) {
+                        this.currentUser = {
+                            ...this.currentUser,
+                            addresses: localUserData.addresses || {
+                                billing: null,
+                                shipping: null
+                            }
+                        };
+                    }
+                    
+                    localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+                    this.updateUI();
+                    return;
+                }
             }
             
-            this.updateUI();
-            return true;
+            // If not authenticated, redirect to login
+            window.location.href = 'login.html';
+            
+        } catch (error) {
+            console.error('Auth init error:', error);
+            window.location.href = 'login.html';
         }
-        return false;
     },
     
-    register: function(name, email, password) {
-        // In a real app, this would be an API call
-        const users = JSON.parse(localStorage.getItem('users')) || [];
+    // Load wishlist items from database
+    loadWishlistItems: async function() {
+        if (!this.currentUser) return;
         
-        // Check if user already exists
-        if (users.some(u => u.email === email)) {
-            return false;
+        try {
+            const response = await fetch(`${this.apiBaseUrl}/get_wishlist.php`, {
+                credentials: 'include'
+            });
+            
+            const data = await response.json();
+            
+            if (data.status === 'success') {
+                // Update user's wishlist with product details
+                this.currentUser.wishlist = data.wishlist.map(item => ({
+                    id: item.product_id,
+                    title: item.title,
+                    price: item.price,
+                    image: item.image
+                }));
+                
+                // Update localStorage for consistency
+                localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+            }
+        } catch (error) {
+            console.error('Error loading wishlist:', error);
+            // Fallback to localStorage if API call fails
+            if (!this.currentUser.wishlist) {
+                this.currentUser.wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            }
         }
-        
-        const newUser = {
-            id: Date.now().toString(),
-            name: name,
-            email: email,
-            password: password,
-            joinDate: new Date().toISOString(),
-            avatar: 'https://ui-avatars.com/api/?name=' + encodeURIComponent(name) + '&background=random',
-            addresses: {
-                billing: null,
-                shipping: null
-            },
-            orders: [],
-            wishlist: []
-        };
-        
-        users.push(newUser);
-        localStorage.setItem('users', JSON.stringify(users));
-        
-        // Auto-login after registration
-        this.currentUser = newUser;
-        localStorage.setItem('currentUser', JSON.stringify(newUser));
-        this.updateUI();
-        
-        return true;
     },
     
-    logout: function() {
-        this.currentUser = null;
-        localStorage.removeItem('currentUser');
-        this.updateUI();
-        window.location.href = 'index.html';
-    },
-    
-    updateUser: function(updatedUser) {
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        const index = users.findIndex(u => u.id === this.currentUser.id);
-        
-        if (index !== -1) {
-            users[index] = updatedUser;
-            localStorage.setItem('users', JSON.stringify(users));
-            this.currentUser = updatedUser;
-            localStorage.setItem('currentUser', JSON.stringify(updatedUser));
-            return true;
+    logout: async function() {
+        try {
+            // Server-side logout
+            await fetch(`${this.apiBaseUrl}/logout.php`, {
+                method: 'POST',
+                credentials: 'include'
+            });
+            
+            // Client-side cleanup
+            this.currentUser = null;
+            localStorage.removeItem('currentUser');
+            
+            window.location.href = 'login.html';
+        } catch (error) {
+            console.error('Logout error:', error);
+            window.location.href = 'login.html';
         }
-        return false;
     },
     
     updateUI: function() {
@@ -1815,28 +2109,27 @@ const auth = {
                             ${this.currentUser.orders.length > 0 ? `
                             <div class="recent-orders">
                                 <h3>Recent Orders</h3>
-                                <table class="orders-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Order</th>
-                                            <th>Date</th>
-                                            <th>Status</th>
-                                            <th>Total</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        ${this.currentUser.orders.slice(0, 2).map(order => `
-                                            <tr>
-                                                <td>#${order.id}</td>
-                                                <td>${new Date(order.date).toLocaleDateString()}</td>
-                                                <td><span class="status ${order.status}">${order.status.charAt(0).toUpperCase() + order.status.slice(1)}</span></td>
-                                                <td>$${order.total.toFixed(2)}</td>
-                                                <td><a href="#" class="btn btn-small">View</a></td>
-                                            </tr>
-                                        `).join('')}
-                                    </tbody>
-                                </table>
+                                <div class="orders-container">
+                                    ${this.currentUser.orders.slice(0, 2).map(order => `
+                                        <div class="order-card">
+                                            <div class="order-header">
+                                                <div class="order-info">
+                                                    <div class="order-number">Order #${order.order_number}</div>
+                                                    <div class="order-date">Placed on ${new Date(order.date).toLocaleDateString()}</div>
+                                                </div>
+                                                <div class="order-status">
+                                                    <span class="status-badge ${order.status}">${order.status.charAt(0).toUpperCase() + order.status.slice(1)}</span>
+                                                </div>
+                                            </div>
+                                            <div class="order-footer">
+                                                <div class="order-total">Total: $${order.total.toFixed(2)}</div>
+                                                <div class="order-actions">
+                                                    <button class="btn btn-small view-order-details" data-order-id="${order.id}">View</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
                             </div>
                             ` : '<p>You have not placed any orders yet.</p>'}
                         </div>
@@ -1844,30 +2137,9 @@ const auth = {
                         <!-- Orders Tab -->
                         <div class="account-tab" id="orders">
                             <h2>Orders</h2>
-                            ${this.currentUser.orders.length > 0 ? `
-                            <table class="orders-table">
-                                <thead>
-                                    <tr>
-                                        <th>Order</th>
-                                        <th>Date</th>
-                                        <th>Status</th>
-                                        <th>Total</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    ${this.currentUser.orders.map(order => `
-                                        <tr>
-                                            <td>#${order.id}</td>
-                                            <td>${new Date(order.date).toLocaleDateString()}</td>
-                                            <td><span class="status ${order.status}">${order.status.charAt(0).toUpperCase() + order.status.slice(1)}</span></td>
-                                            <td>$${order.total.toFixed(2)}</td>
-                                            <td><a href="#" class="btn btn-small">View</a></td>
-                                        </tr>
-                                    `).join('')}
-                                </tbody>
-                            </table>
-                            ` : '<p>You have not placed any orders yet.</p>'}
+                            <div class="orders-container">
+                                <!-- Orders will be loaded here -->
+                            </div>
                         </div>
                         
                         <!-- Wishlist Tab -->
@@ -1987,29 +2259,40 @@ const auth = {
                 this.updateAccountDetails();
             });
             
-            // Tab switching
+            // Add tab switching behavior for sidebar navigation
             const menuLinks = document.querySelectorAll('.account-menu a');
             const tabs = document.querySelectorAll('.account-tab');
             
             menuLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
+                link.addEventListener('click', function(e) {
                     e.preventDefault();
                     
-                    // Update active tab in menu
-                    menuLinks.forEach(l => l.parentElement.classList.remove('active'));
-                    link.parentElement.classList.add('active');
+                    const tabId = this.getAttribute('href').substring(1);
+                    const tab = document.getElementById(tabId);
                     
-                    // Show corresponding tab
-                    const tabId = link.getAttribute('href').substring(1);
-                    tabs.forEach(tab => tab.classList.remove('active'));
-                    document.getElementById(tabId).classList.add('active');
-                    
-                    // Update URL hash
-                    window.location.hash = tabId;
-                    
-                    // Special handling for wishlist tab
-                    if (tabId === 'wishlist') {
-                        renderWishlistItems();
+                    if (tab) {
+                        // Update active states
+                        document.querySelectorAll('.account-menu li').forEach(li => li.classList.remove('active'));
+                        this.parentElement.classList.add('active');
+                        
+                        tabs.forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+                        
+                        // Special handling for specific tabs
+                        if (tabId === 'wishlist') {
+                            renderWishlistItems();
+                        } else if (tabId === 'orders') {
+                            renderOrders();
+                        }
+                        
+                        // Scroll to top of the page
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL hash
+                        history.replaceState(null, null, `#${tabId}`);
                     }
                 });
             });
@@ -2025,20 +2308,27 @@ const auth = {
                     menuLinks.forEach(l => l.parentElement.classList.remove('active'));
                     document.querySelector(`.account-menu a[href="#${tabId}"]`).parentElement.classList.add('active');
                     
-                    // Special handling for wishlist tab
+                    // Special handling for specific tabs
                     if (tabId === 'wishlist') {
                         renderWishlistItems();
+                    } else if (tabId === 'orders') {
+                        renderOrders();
                     }
                 }
+            }
+            
+            // Initialize address buttons
+            initAddressButtons();
+            
+            // Render orders if we're on the orders tab
+            if (window.location.hash === '#orders') {
+                renderOrders();
             }
             
             // Initialize wishlist if on that tab
             if (window.location.hash === '#wishlist') {
                 renderWishlistItems();
             }
-            
-            // Initialize address buttons
-            initAddressButtons();
         }
         
         // Update wishlist count in header
@@ -2060,44 +2350,236 @@ const auth = {
             return;
         }
         
-        if (currentPassword && currentPassword !== this.currentUser.password) {
-            alert('Current password is incorrect!');
-            return;
-        }
-        
         // Update user
         const updatedUser = {
             ...this.currentUser,
             name: `${firstName} ${lastName}`.trim(),
-            email: email,
-            password: newPassword || this.currentUser.password
+            email: email
         };
         
-        if (this.updateUser(updatedUser)) {
-            alert('Account details updated successfully!');
-        } else {
-            alert('Failed to update account details.');
+        if (newPassword) {
+            updatedUser.password = newPassword;
         }
+        
+        // Save to localStorage
+        localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+        this.currentUser = updatedUser;
+        
+        alert('Account details updated successfully!');
     }
 };
+
+// Load orders from database
+async function loadOrders() {
+    if (!auth.currentUser) return;
+    
+    try {
+        const response = await fetch(`${auth.apiBaseUrl}/get_orders.php`, {
+            credentials: 'include'
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.status === 'success') {
+            console.log('Orders loaded successfully:', data.orders);
+            
+            // Update user's orders
+            auth.currentUser.orders = data.orders.map(order => ({
+                id: order.id,
+                order_number: order.order_number,
+                date: order.order_date,
+                status: order.status,
+                total: parseFloat(order.total_amount),
+                items: order.items,
+                payment_method: order.payment_method,
+                payment_status: order.payment_status,
+                shipping_address: order.shipping_address,
+                billing_address: order.billing_address
+            }));
+            
+            // Update localStorage for consistency
+            localStorage.setItem('currentUser', JSON.stringify(auth.currentUser));
+            
+            // If we're on the orders tab, refresh the view
+            if (window.location.hash === '#orders') {
+                renderOrders();
+            }
+        } else {
+            console.error('Error loading orders:', data.message);
+        }
+    } catch (error) {
+        console.error('Error loading orders:', error);
+        // Fallback to localStorage if API call fails
+        if (!auth.currentUser.orders) {
+            auth.currentUser.orders = JSON.parse(localStorage.getItem('orders')) || [];
+        }
+    }
+}
+
+// Render orders in the account page
+function renderOrders() {
+    const ordersContainer = document.querySelector('#orders .orders-container');
+    if (!ordersContainer) {
+        console.error('Orders container not found');
+        return;
+    }
+    
+    ordersContainer.innerHTML = '';
+    
+    if (!auth.currentUser || !auth.currentUser.orders || auth.currentUser.orders.length === 0) {
+        ordersContainer.innerHTML = `
+            <div class="empty-orders">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>No Orders Yet</h3>
+                <p>You haven't placed any orders yet.</p>
+                <a href="shop.html" class="btn btn-primary">Start Shopping</a>
+            </div>
+        `;
+        return;
+    }
+    
+    console.log('Rendering orders:', auth.currentUser.orders);
+    
+    auth.currentUser.orders.forEach(order => {
+        const orderElement = document.createElement('div');
+        orderElement.className = 'order-card';
+        orderElement.innerHTML = `
+            <div class="order-header">
+                <div class="order-info">
+                    <div class="order-number">Order #${order.order_number}</div>
+                    <div class="order-date">Placed on ${new Date(order.date).toLocaleDateString()}</div>
+                </div>
+                <div class="order-status">
+                    <span class="status-badge ${order.status}">${order.status.charAt(0).toUpperCase() + order.status.slice(1)}</span>
+                </div>
+            </div>
+            
+            <div class="order-items">
+                ${order.items.slice(0, 3).map(item => `
+                    <div class="order-item-preview">
+                        <img src="${item.image}" alt="${item.title}" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">${item.title}</div>
+                            <div class="item-quantity">Qty: ${item.quantity}</div>
+                        </div>
+                    </div>
+                `).join('')}
+                
+                ${order.items.length > 3 ? `
+                    <div class="more-items">+${order.items.length - 3} more items</div>
+                ` : ''}
+            </div>
+            
+            <div class="order-footer">
+                <div class="order-total">Total: $${order.total.toFixed(2)}</div>
+                <div class="order-actions">
+                    <button class="btn btn-outline view-order-details" data-order-id="${order.id}">View Details</button>
+                    ${order.status === 'delivered' ? `
+                        <button class="btn btn-primary">Reorder</button>
+                    ` : ''}
+                </div>
+            </div>
+            
+            <div class="order-details" id="order-details-${order.id}" style="display: none;">
+                <div class="order-details-content">
+                    <h4>Order Details</h4>
+                    
+                    <div class="details-section">
+                        <h5>Items</h5>
+                        ${order.items.map(item => `
+                            <div class="detail-item">
+                                <img src="${item.image}" alt="${item.title}">
+                                <div class="item-info">
+                                    <div class="item-name">${item.title}</div>
+                                    ${item.size ? `<div class="item-variant">Size: ${item.size}</div>` : ''}
+                                    ${item.color ? `<div class="item-variant">Color: ${item.color}</div>` : ''}
+                                    <div class="item-price">$${item.price.toFixed(2)} × ${item.quantity}</div>
+                                </div>
+                                <div class="item-total">$${(item.price * item.quantity).toFixed(2)}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="details-section">
+                        <h5>Shipping Address</h5>
+                        <address>
+                            ${order.shipping_address.name}<br>
+                            ${order.shipping_address.address}<br>
+                            ${order.shipping_address.address2 ? order.shipping_address.address2 + '<br>' : ''}
+                            ${order.shipping_address.city}, ${order.shipping_address.state} ${order.shipping_address.zip}<br>
+                            ${order.shipping_address.country}<br>
+                            ${order.shipping_address.phone}
+                        </address>
+                    </div>
+                    
+                    <div class="details-section">
+                        <h5>Payment Information</h5>
+                        <p>Method: ${order.payment_method}</p>
+                        <p>Status: <span class="payment-status ${order.payment_status}">${order.payment_status.charAt(0).toUpperCase() + order.payment_status.slice(1)}</span></p>
+                    </div>
+                    
+                    <div class="details-section">
+                        <h5>Order Summary</h5>
+                        <div class="order-summary">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span>$${order.total.toFixed(2)}</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping:</span>
+                                <span>Free</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span>$${order.total.toFixed(2)}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        ordersContainer.appendChild(orderElement);
+    });
+    
+    // Add event listeners for view details buttons
+    document.querySelectorAll('.view-order-details').forEach(button => {
+        button.addEventListener('click', function() {
+            const orderId = this.getAttribute('data-order-id');
+            const detailsElement = document.getElementById(`order-details-${orderId}`);
+            
+            if (detailsElement.style.display === 'none') {
+                detailsElement.style.display = 'block';
+                this.textContent = 'Hide Details';
+            } else {
+                detailsElement.style.display = 'none';
+                this.textContent = 'View Details';
+            }
+        });
+    });
+}
 
 // Shopping Cart
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let cartCount = cart.reduce((total, item) => total + item.quantity, 0);
 
-// Initialize wishlist count from current user's wishlist
-let wishlistCount = 0;
-if (auth.currentUser) {
-    wishlistCount = auth.currentUser.wishlist.length;
+function updateCartCount() {
+    const cartCountElement = document.querySelector('.cart-count');
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
+    }
 }
 
 // Update wishlist count in header
 function updateWishlistCount() {
-    // Refresh the count from current user data
-    if (auth.currentUser) {
+    let wishlistCount = 0;
+    
+    if (auth.currentUser && auth.currentUser.wishlist) {
         wishlistCount = auth.currentUser.wishlist.length;
-    } else {
-        wishlistCount = 0;
     }
     
     const wishlistCountElement = document.querySelector('.wishlist-count');
@@ -2105,59 +2587,146 @@ function updateWishlistCount() {
         wishlistCountElement.textContent = wishlistCount;
     }
 }
+// Initialize auth system when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    auth.init();
+    updateCartCount();
+    updateWishlistCount();
+});
 
-// Wishlist functions
-function toggleWishlist(productCard, product) {
+// Wishlist functions for account page
+async function toggleWishlist(productId, productElement = null) {
+    try {
+        // Check if user is logged in
+        if (!auth.currentUser) {
+            showAuthAlert();
+            return false;
+        }
+        
+        // Validate product ID
+        if (!productId || productId <= 0) {
+            console.error('Invalid product ID:', productId);
+            return false;
+        }
+        
+        const response = await fetch(`${auth.apiBaseUrl}/toggle_wishlist.php`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+                product_id: productId
+            })
+        });
+        
+        // Check if response is OK
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        // Check if response is JSON
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            throw new Error('Response is not JSON');
+        }
+        
+        const data = await response.json();
+        
+        if (data.status === 'success') {
+            // Update wishlist in memory
+            if (data.action === 'added') {
+                const product = products.find(p => p.id === productId);
+                if (product) {
+                    auth.currentUser.wishlist.push({
+                        id: product.id,
+                        title: product.title,
+                        price: product.price,
+                        image: product.image
+                    });
+                }
+                showWishlistNotification('Added to wishlist!');
+            } else {
+                auth.currentUser.wishlist = auth.currentUser.wishlist.filter(item => item.id !== productId);
+                showWishlistNotification('Removed from wishlist!');
+            }
+            
+            // Update UI if we're on the wishlist tab
+            if (window.location.hash === '#wishlist') {
+                renderWishlistItems();
+            }
+            
+            // Update wishlist count
+            updateWishlistCount();
+            
+            // Update localStorage
+            localStorage.setItem('currentUser', JSON.stringify(auth.currentUser));
+            
+            return true;
+        } else {
+            console.error('Error toggling wishlist:', data.message);
+            return false;
+        }
+    } catch (error) {
+        console.error('Error toggling wishlist:', error);
+        // Fallback to local storage if API call fails
+        return toggleWishlistLocal(productId, productElement);
+    }
+}
+
+// Fallback function for wishlist using local storage
+function toggleWishlistLocal(productId, productElement = null) {
     if (!auth.currentUser) {
         showAuthAlert();
-        return;
+        return false;
     }
     
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const userIndex = users.findIndex(u => u.id === auth.currentUser.id);
+    // Validate product ID
+    if (!productId || productId <= 0) {
+        console.error('Invalid product ID:', productId);
+        return false;
+    }
     
-    if (userIndex === -1) return;
+    // Initialize wishlist if it doesn't exist
+    if (!auth.currentUser.wishlist) {
+        auth.currentUser.wishlist = [];
+    }
     
     // Check if product is already in wishlist
-    const wishlistIndex = users[userIndex].wishlist.findIndex(item => item.id === product.id);
+    const existingIndex = auth.currentUser.wishlist.findIndex(item => item.id === productId);
     
-    if (wishlistIndex >= 0) {
+    if (existingIndex >= 0) {
         // Remove from wishlist
-        users[userIndex].wishlist.splice(wishlistIndex, 1);
-        if (productCard) {
-            productCard.querySelector('.add-to-wishlist').innerHTML = '<i class="far fa-heart"></i>';
-        }
+        auth.currentUser.wishlist.splice(existingIndex, 1);
+        
+        showWishlistNotification('Removed from wishlist!');
     } else {
         // Add to wishlist
-        users[userIndex].wishlist.push({
-            id: product.id,
-            title: product.title,
-            price: product.price,
-            image: product.image,
-            category: product.category
-        });
-        if (productCard) {
-            productCard.querySelector('.add-to-wishlist').innerHTML = '<i class="fas fa-heart"></i>';
+        const product = products.find(p => p.id === productId);
+        if (product) {
+            auth.currentUser.wishlist.push({
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                image: product.image
+            });
+            
+            showWishlistNotification('Added to wishlist!');
         }
     }
     
-    // Update localStorage
-    localStorage.setItem('users', JSON.stringify(users));
-    
-    // Update current user data
-    auth.currentUser = users[userIndex];
+    // Save to localStorage
     localStorage.setItem('currentUser', JSON.stringify(auth.currentUser));
+    localStorage.setItem('wishlist', JSON.stringify(auth.currentUser.wishlist));
+    
+    // Update UI if we're on the wishlist tab
+    if (window.location.hash === '#wishlist') {
+        renderWishlistItems();
+    }
     
     // Update wishlist count
     updateWishlistCount();
-    
-    // Update modal button if this product is currently in modal
-    if (currentModalProduct && currentModalProduct.id === product.id) {
-        const wishlistBtn = document.getElementById('addToWishlistModal');
-        wishlistBtn.innerHTML = wishlistIndex >= 0 ? 
-            '<i class="far fa-heart"></i> Add to Wishlist' : 
-            '<i class="fas fa-heart"></i> Remove from Wishlist';
-    }
+    return true;
 }
 
 function renderWishlistItems() {
@@ -2267,6 +2836,8 @@ function renderWishlistItems() {
 
 // Product Modal Functions
 let currentModalProduct = null;
+let selectedSize = null;
+let selectedColor = null;
 
 function showProductModal(product) {
     const modal = document.getElementById('productModal');
@@ -2345,9 +2916,26 @@ function showProductModal(product) {
     // Set wishlist button state
     const isInWishlist = auth.currentUser ? 
         auth.currentUser.wishlist.some(item => item.id === product.id) : false;
-    document.getElementById('addToWishlistModal').innerHTML = isInWishlist ? 
+    const wishlistBtn = document.getElementById('addToWishlistModal');
+    wishlistBtn.innerHTML = isInWishlist ? 
         '<i class="fas fa-heart"></i> Remove from Wishlist' : 
         '<i class="far fa-heart"></i> Add to Wishlist';
+    
+    // Update wishlist button event listener
+    wishlistBtn.onclick = function() {
+        if (!currentModalProduct) return;
+        
+        // Scroll to top before action
+        window.scrollTo(0, 0);
+        
+        toggleWishlist(currentModalProduct.id);
+        
+        // Update button text
+        const newIsInWishlist = auth.currentUser?.wishlist.some(item => item.id === currentModalProduct.id);
+        this.innerHTML = newIsInWishlist ? 
+            '<i class="fas fa-heart"></i> Remove from Wishlist' : 
+            '<i class="far fa-heart"></i> Add to Wishlist';
+    };
     
     // Reset quantity
     document.getElementById('productQuantity').value = 1;
@@ -2493,6 +3081,10 @@ function showRemoveConfirmation(product, productCard) {
     productToRemove = product;
     productCardToRemove = productCard;
     document.getElementById('confirmationModal').classList.add('active');
+    
+    // Update confirmation message
+    document.getElementById('confirmationMessage').textContent = 
+        `Are you sure you want to remove "${product.title}" from your wishlist?`;
 }
 
 function hideRemoveConfirmation() {
@@ -2525,22 +3117,6 @@ document.addEventListener('DOMContentLoaded', function() {
         closeProductModal();
     });
 
-    // Add to Wishlist from Modal
-    document.getElementById('addToWishlistModal')?.addEventListener('click', function() {
-        if (!currentModalProduct) return;
-        
-        // Scroll to top before action
-        window.scrollTo(0, 0);
-        
-        toggleWishlist(null, currentModalProduct);
-        
-        // Update button text
-        const isInWishlist = auth.currentUser?.wishlist.some(item => item.id === currentModalProduct.id);
-        this.innerHTML = isInWishlist ? 
-            '<i class="fas fa-heart"></i> Remove from Wishlist' : 
-            '<i class="far fa-heart"></i> Add to Wishlist';
-    });
-
     confirmRemoveBtn?.addEventListener('click', function() {
         // Close modal immediately
         confirmationModal.classList.remove('active');
@@ -2548,9 +3124,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Process removal after modal closes (for better UX)
         setTimeout(() => {
             if (productToRemove && productCardToRemove) {
-                toggleWishlist(null, productToRemove);
+                // Use the toggleWishlist function to properly remove from database
+                toggleWishlist(productToRemove.id, productCardToRemove);
+                
+                // Remove the product card from the UI
                 productCardToRemove.remove();
                 
+                // If wishlist is empty, show empty state
                 if (auth.currentUser.wishlist.length === 0) {
                     renderWishlistItems();
                 }
@@ -2558,12 +3138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Clear references
             productToRemove = null;
             productCardToRemove = null;
-            
-            // Return focus to a sensible element
-            if (lastFocusedElement) {
-                lastFocusedElement.focus();
-            }
-        }, 10); // Small delay to allow modal to close
+        }, 10);
     });
     
     cancelRemoveBtn?.addEventListener('click', function() {
@@ -2727,6 +3302,27 @@ function showCartNotification(product) {
     }, 3000);
 }
 
+function showWishlistNotification(message) {
+    // Scroll to top before showing notification
+    window.scrollTo(0, 0);
+    
+    const notification = document.createElement('div');
+    notification.className = 'wishlist-notification';
+    notification.innerHTML = `<p>${message}</p>`;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 2000);
+}
+
 function showAuthAlert() {
     // Scroll to top before showing alert
     window.scrollTo(0, 0);
@@ -2850,6 +3446,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
 // Listen for storage events to update counts when data changes in other tabs
 window.addEventListener('storage', function(e) {
     if (e.key === 'cart') {
@@ -2867,6 +3464,8 @@ window.addEventListener('storage', function(e) {
         // If we're on the wishlist tab, refresh the view
         if (window.location.hash === '#wishlist') {
             renderWishlistItems();
+        } else if (window.location.hash === '#orders') {
+            renderOrders();
         }
     }
 });
@@ -2876,22 +3475,265 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('productModal');
     
     document.getElementById('closeModal')?.addEventListener('click', function() {
-        modal.classList.remove('active');
+        closeProductModal();
     });
     
     modal?.addEventListener('click', function(e) {
         if (e.target === modal) {
-            modal.classList.remove('active');
+            closeProductModal();
         }
     });
     
-    // Escape key to close modal
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal?.classList.contains('active')) {
-            modal.classList.remove('active');
+// Escape key to close modal
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal?.classList.contains('active')) {
+        closeProductModal();
+    }
+});
+});
+
+
+// Load orders from database
+async function loadOrders() {
+    if (!auth.currentUser) return;
+    
+    try {
+        const response = await fetch(`${API_BASE}/get_orders.php`, {
+            credentials: 'include'
+        });
+        
+        const data = await response.json();
+        
+        if (data.status === 'success') {
+            // Update user's orders
+            auth.currentUser.orders = data.orders.map(order => ({
+                id: order.id,
+                order_number: order.order_number,
+                date: order.order_date,
+                status: order.status,
+                total: parseFloat(order.total_amount),
+                items: order.items,
+                payment_method: order.payment_method,
+                payment_status: order.payment_status,
+                shipping_address: order.shipping_address
+            }));
+            
+            // Update localStorage for consistency
+            localStorage.setItem('currentUser', JSON.stringify(auth.currentUser));
+            
+            // If we're on the orders tab, refresh the view
+            if (window.location.hash === '#orders') {
+                renderOrders();
+            }
+        }
+    } catch (error) {
+        console.error('Error loading orders:', error);
+        // Fallback to localStorage if API call fails
+        if (!auth.currentUser.orders) {
+            auth.currentUser.orders = JSON.parse(localStorage.getItem('orders')) || [];
+        }
+    }
+}
+
+// Render orders in the account page
+function renderOrders() {
+    const ordersContainer = document.querySelector('#orders .orders-container');
+    if (!ordersContainer) return;
+    
+    ordersContainer.innerHTML = '';
+    
+    if (!auth.currentUser || auth.currentUser.orders.length === 0) {
+        ordersContainer.innerHTML = `
+            <div class="empty-orders">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>No Orders Yet</h3>
+                <p>You haven't placed any orders yet.</p>
+                <a href="shop.html" class="btn btn-primary">Start Shopping</a>
+            </div>
+        `;
+        return;
+    }
+    
+    auth.currentUser.orders.forEach(order => {
+        const orderElement = document.createElement('div');
+        orderElement.className = 'order-card';
+        orderElement.innerHTML = `
+            <div class="order-header">
+                <div class="order-info">
+                    <div class="order-number">Order #${order.order_number}</div>
+                    <div class="order-date">Placed on ${new Date(order.date).toLocaleDateString()}</div>
+                </div>
+                <div class="order-status">
+                    <span class="status-badge ${order.status}">${order.status.charAt(0).toUpperCase() + order.status.slice(1)}</span>
+                </div>
+            </div>
+            
+            <div class="order-items">
+                ${order.items.slice(0, 3).map(item => `
+                    <div class="order-item-preview">
+                        <img src="${item.image}" alt="${item.title}" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">${item.title}</div>
+                            <div class="item-quantity">Qty: ${item.quantity}</div>
+                        </div>
+                    </div>
+                `).join('')}
+                
+                ${order.items.length > 3 ? `
+                    <div class="more-items">+${order.items.length - 3} more items</div>
+                ` : ''}
+            </div>
+            
+            <div class="order-footer">
+                <div class="order-total">Total: $${order.total.toFixed(2)}</div>
+                <div class="order-actions">
+                    <button class="btn btn-outline view-order-details" data-order-id="${order.id}">View Details</button>
+                    ${order.status === 'delivered' ? `
+                        <button class="btn btn-primary">Reorder</button>
+                    ` : ''}
+                </div>
+            </div>
+            
+            <div class="order-details" id="order-details-${order.id}" style="display: none;">
+                <div class="order-details-content">
+                    <h4>Order Details</h4>
+                    
+                    <div class="details-section">
+                        <h5>Items</h5>
+                        ${order.items.map(item => `
+                            <div class="detail-item">
+                                <img src="${item.image}" alt="${item.title}">
+                                <div class="item-info">
+                                    <div class="item-name">${item.title}</div>
+                                    ${item.size ? `<div class="item-variant">Size: ${item.size}</div>` : ''}
+                                    ${item.color ? `<div class="item-variant">Color: ${item.color}</div>` : ''}
+                                    <div class="item-price">$${item.price.toFixed(2)} × ${item.quantity}</div>
+                                </div>
+                                <div class="item-total">$${(item.price * item.quantity).toFixed(2)}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="details-section">
+                        <h5>Shipping Address</h5>
+                        <address>
+                            ${order.shipping_address.name}<br>
+                            ${order.shipping_address.address}<br>
+                            ${order.shipping_address.address2 ? order.shipping_address.address2 + '<br>' : ''}
+                            ${order.shipping_address.city}, ${order.shipping_address.state} ${order.shipping_address.zip}<br>
+                            ${order.shipping_address.country}<br>
+                            ${order.shipping_address.phone}
+                        </address>
+                    </div>
+                    
+                    <div class="details-section">
+                        <h5>Payment Information</h5>
+                        <p>Method: ${order.payment_method}</p>
+                        <p>Status: <span class="payment-status ${order.payment_status}">${order.payment_status.charAt(0).toUpperCase() + order.payment_status.slice(1)}</span></p>
+                    </div>
+                    
+                    <div class="details-section">
+                        <h5>Order Summary</h5>
+                        <div class="order-summary">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span>$${order.total.toFixed(2)}</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping:</span>
+                                <span>Free</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span>$${order.total.toFixed(2)}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        ordersContainer.appendChild(orderElement);
+    });
+    
+    // Add event listeners for view details buttons
+    document.querySelectorAll('.view-order-details').forEach(button => {
+        button.addEventListener('click', function() {
+            const orderId = this.getAttribute('data-order-id');
+            const detailsElement = document.getElementById(`order-details-${orderId}`);
+            
+            if (detailsElement.style.display === 'none') {
+                detailsElement.style.display = 'block';
+                this.textContent = 'Hide Details';
+            } else {
+                detailsElement.style.display = 'none';
+                this.textContent = 'View Details';
+            }
+        });
+    });
+}
+// Debug script to check orders loading
+async function debugOrdersLoading() {
+    console.log('=== DEBUG: Orders Loading ===');
+    
+    // Check if user is authenticated
+    if (!auth.currentUser) {
+        console.error('User not authenticated');
+        return;
+    }
+    
+    console.log('Current user:', auth.currentUser);
+    
+    // Try to load orders directly
+    try {
+        console.log('Attempting to load orders from API...');
+        const response = await fetch(`${auth.apiBaseUrl}/get_orders.php`, {
+            credentials: 'include'
+        });
+        
+        console.log('API response status:', response.status);
+        
+        const data = await response.json();
+        console.log('API response data:', data);
+        
+        if (data.status === 'success') {
+            console.log('Orders found:', data.orders.length);
+            console.log('Orders data:', data.orders);
+        } else {
+            console.error('API returned error:', data.message);
+        }
+    } catch (error) {
+        console.error('Error loading orders:', error);
+    }
+}
+
+// Run debug when orders tab is clicked
+document.addEventListener('DOMContentLoaded', function() {
+    // Add debug button (remove in production)
+    const debugButton = document.createElement('button');
+    debugButton.textContent = 'Debug Orders';
+    debugButton.style.position = 'fixed';
+    debugButton.style.bottom = '20px';
+    debugButton.style.right = '20px';
+    debugButton.style.zIndex = '10000';
+    debugButton.style.padding = '10px';
+    debugButton.style.backgroundColor = '#f44336';
+    debugButton.style.color = 'white';
+    debugButton.style.border = 'none';
+    debugButton.style.borderRadius = '5px';
+    debugButton.style.cursor = 'pointer';
+    
+    debugButton.addEventListener('click', debugOrdersLoading);
+    document.body.appendChild(debugButton);
+    
+    // Also debug when orders tab is clicked
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.account-menu a[href="#orders"]')) {
+            setTimeout(debugOrdersLoading, 100);
         }
     });
 });
+
 </script>
 </body>
 </html>

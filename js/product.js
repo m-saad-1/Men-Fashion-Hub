@@ -1,234 +1,337 @@
-// Load products from mock data
-function loadProducts() {
-    // Mock products data
-    const mockProducts = [
-        {
-            id: 1,
-            name: "Premium Cotton Shirt",
-            price: 59.99,
-            oldPrice: 74.99,
-            image: "images/products/shirt-1.jpg",
-            category: "shirts",
-            rating: 4.5,
-            reviewCount: 24,
-            isNew: true,
-            onSale: true,
-            colors: ["#3a3a3a", "#5a8ac1", "#e6e6e6"],
-            sizes: ["XS", "S", "M", "L", "XL"]
-        },
-        {
-            id: 2,
-            name: "Slim Fit Jeans",
-            price: 79.99,
-            oldPrice: 89.99,
-            image: "images/products/jeans-1.jpg",
-            category: "jeans",
-            rating: 4.2,
-            reviewCount: 18,
-            isNew: false,
-            onSale: true,
-            colors: ["#3a3a3a", "#5a3a22"],
-            sizes: ["28", "30", "32", "34", "36"]
-        },
-        {
-            id: 3,
-            name: "Classic Denim Jacket",
-            price: 99.99,
-            image: "images/products/jacket-1.jpg",
-            category: "jackets",
-            rating: 4.7,
-            reviewCount: 32,
-            isNew: true,
-            onSale: false,
-            colors: ["#5a8ac1", "#3a3a3a"],
-            sizes: ["S", "M", "L", "XL"]
-        },
-        {
-            id: 4,
-            name: "Basic White T-Shirt",
-            price: 29.99,
-            image: "images/products/tshirt-1.jpg",
-            category: "t-shirts",
-            rating: 4.0,
-            reviewCount: 15,
-            isNew: false,
-            onSale: false,
-            colors: ["#e6e6e6", "#3a3a3a"],
-            sizes: ["XS", "S", "M", "L", "XL"]
-        },
-        {
-            id: 5,
-            name: "Casual Summer Dress",
-            price: 69.99,
-            oldPrice: 79.99,
-            image: "images/products/dress-1.jpg",
-            category: "dresses",
-            rating: 4.3,
-            reviewCount: 21,
-            isNew: false,
-            onSale: true,
-            colors: ["#ff69b4", "#ffffff", "#87ceeb"],
-            sizes: ["S", "M", "L"]
-        },
-        {
-            id: 6,
-            name: "Leather Crossbody Bag",
-            price: 89.99,
-            image: "images/products/bag-1.jpg",
-            category: "bags",
-            rating: 4.8,
-            reviewCount: 27,
-            isNew: true,
-            onSale: false,
-            colors: ["#3a3a3a", "#8b4513"],
-            sizes: ["One Size"]
-        }
-    ];
+// Product data with complete details for modal
+const products = [
+  {
+    id: 1,
+    title: "Premium Denim Jacket",
+    brand: "UNITED",
+    price: 99.99,
+    originalPrice: 129.99,
+    image: "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1065&q=80",
+    badge: "new",
+    rating: 4.5,
+    reviews: 24,
+    description: "This premium denim jacket features a classic fit with modern details. Made from 100% cotton denim with a medium wash for a timeless look.",
+    features: [
+      "100% Cotton denim",
+      "Medium wash",
+      "Classic fit",
+      "Metal buttons",
+      "Machine washable"
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Blue", "Black"],
+    sku: "DJ-001",
+    category: "Jackets"
+  },
+  // ... other products
+];
 
-    // Get URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const category = urlParams.get('category');
+// Global variables
+let currentModalProduct = null;
+let selectedSize = null;
+let selectedColor = null;
+let cart = [];
+let wishlist = [];
+
+// Load products into the grid
+export function loadProducts(containerId = 'featured-products-grid') {
+  const productsGrid = document.getElementById(containerId);
+  if (!productsGrid) return;
+  
+  productsGrid.innerHTML = '';
+  
+  products.forEach(product => {
+    const discount = product.originalPrice ? 
+      Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : 0;
     
-    // Filter products by category if specified
-    let productsToShow = mockProducts;
-    if (category) {
-        productsToShow = mockProducts.filter(product => {
-            return product.category === category || 
-                   (category === 'new-arrivals' && product.isNew) ||
-                   (category === 'best-sellers' && product.rating >= 4.5) ||
-                   (category === 'sale' && product.onSale);
-        });
-    }
+    const stars = Array(Math.floor(product.rating)).fill('<i class="fas fa-star"></i>').join('') + 
+      (product.rating % 1 >= 0.5 ? '<i class="fas fa-star-half-alt"></i>' : '');
     
-    // Get the product grid element
-    const productGrids = document.querySelectorAll('.product-grid:not(.grid-view)');
+    const productCard = document.createElement('div');
+    productCard.className = 'product-card';
+    productCard.innerHTML = `
+      ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+      <div class="product-image">
+        <img src="${product.image}" alt="${product.title}">
+      </div>
+      <div class="product-info">
+        <h3 class="product-title">${product.title}</h3>
+        <div class="product-price">
+          <span class="current-price">$${product.price.toFixed(2)}</span>
+          ${product.originalPrice ? `<span class="old-price">$${product.originalPrice.toFixed(2)}</span>` : ''}
+          ${discount > 0 ? `<span class="discount">${discount}% OFF</span>` : ''}
+        </div>
+        <div class="product-meta">
+          <div class="rating">
+            <div class="stars">${stars}</div>
+            <span>(${product.reviews})</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-actions">
+        <button class="action-btn quick-view" title="Quick View">
+          <i class="far fa-eye"></i>
+        </button>
+        <button class="action-btn add-to-wishlist" title="Add to Wishlist">
+          <i class="far fa-heart"></i>
+        </button>
+        <button class="action-btn add-to-cart" title="Add to Cart">
+          <i class="fas fa-shopping-cart"></i>
+        </button>
+      </div>
+    `;
     
-    productGrids.forEach(grid => {
-        // Clear existing content
-        grid.innerHTML = '';
-        
-        // Check if there are products to show
-        if (productsToShow.length === 0) {
-            grid.innerHTML = '<p class="no-products">No products found in this category.</p>';
-            return;
-        }
-        
-        // Add products to the grid
-        productsToShow.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.className = 'product-card';
-            productCard.innerHTML = `
-                <div class="product-image">
-                    ${product.onSale ? '<span class="product-badge sale">Sale</span>' : ''}
-                    ${product.isNew ? '<span class="product-badge new">New</span>' : ''}
-                    <img src="${product.image}" alt="${product.name}">
-                    <div class="product-actions">
-                        <button class="action-btn quick-view" data-id="${product.id}"><i class="far fa-eye"></i></button>
-                        <button class="action-btn add-to-wishlist" data-id="${product.id}"><i class="far fa-heart"></i></button>
-                        <button class="action-btn add-to-cart" data-id="${product.id}"><i class="fas fa-shopping-bag"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">${product.name}</h3>
-                    <div class="product-price">
-                        <span class="current-price">$${product.price.toFixed(2)}</span>
-                        ${product.oldPrice ? `<span class="old-price">$${product.oldPrice.toFixed(2)}</span>` : ''}
-                        ${product.onSale ? `<span class="discount">Save ${Math.round((1 - product.price / product.oldPrice) * 100)}%</span>` : ''}
-                    </div>
-                    <div class="product-meta">
-                        <div class="rating">
-                            <div class="stars">
-                                ${generateStars(product.rating)}
-                            </div>
-                            <span class="review-count">(${product.reviewCount})</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            grid.appendChild(productCard);
-        });
-        
-        // Add event listeners to product actions
-        addProductEventListeners();
+    productsGrid.appendChild(productCard);
+    
+    // Add event listeners
+    const quickViewBtn = productCard.querySelector('.quick-view');
+    const wishlistBtn = productCard.querySelector('.add-to-wishlist');
+    const cartBtn = productCard.querySelector('.add-to-cart');
+    
+    // Click on product card opens modal
+    productCard.addEventListener('click', function(e) {
+      if (e.target.closest('.product-actions')) return;
+      showProductModal(product);
     });
+    
+    quickViewBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      showProductModal(product);
+    });
+    
+    wishlistBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleWishlist(product.id);
+    });
+    
+    cartBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      addToCart(product.id);
+    });
+  });
 }
 
-// Add event listeners to product actions
-function addProductEventListeners() {
-    // Quick view buttons
-    document.querySelectorAll('.quick-view').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const productId = parseInt(this.getAttribute('data-id'));
-            // In a real implementation, this would show a quick view modal with product details
-            alert(`Quick view for product ID: ${productId}. This would show product details in a modal.`);
-        });
+// Show product modal with details
+export function showProductModal(product) {
+  currentModalProduct = product;
+  selectedSize = null;
+  selectedColor = null;
+  
+  // Update modal content
+  document.getElementById('modalProductTitle').textContent = product.title;
+  document.getElementById('modalProductImage').src = product.image;
+  document.getElementById('modalProductImage').alt = product.title;
+  document.getElementById('modalProductPrice').textContent = `$${product.price.toFixed(2)}`;
+  
+  const oldPriceEl = document.getElementById('modalProductOldPrice');
+  const discountEl = document.getElementById('modalProductDiscount');
+  
+  if (product.originalPrice) {
+    const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+    oldPriceEl.textContent = `$${product.originalPrice.toFixed(2)}`;
+    discountEl.textContent = `${discount}% OFF`;
+  } else {
+    oldPriceEl.textContent = '';
+    discountEl.textContent = '';
+  }
+  
+  const stars = Array(Math.floor(product.rating)).fill('<i class="fas fa-star"></i>').join('') + 
+    (product.rating % 1 >= 0.5 ? '<i class="fas fa-star-half-alt"></i>' : '');
+  document.getElementById('modalProductRating').innerHTML = stars;
+  document.getElementById('modalProductReviews').textContent = `(${product.reviews} reviews)`;
+  document.getElementById('modalProductDescription').textContent = product.description;
+  
+  // Update features list
+  const featuresList = document.getElementById('modalProductFeatures');
+  featuresList.innerHTML = '';
+  product.features.forEach(feature => {
+    const li = document.createElement('li');
+    li.textContent = feature;
+    featuresList.appendChild(li);
+  });
+  
+  // Update size options
+  const sizeOptions = document.getElementById('modalSizeOptions');
+  sizeOptions.innerHTML = '';
+  product.sizes.forEach(size => {
+    const sizeBtn = document.createElement('button');
+    sizeBtn.className = 'size-btn';
+    sizeBtn.textContent = size;
+    sizeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
+      this.classList.add('selected');
+      selectedSize = size;
     });
-    
-    // Add to wishlist buttons
-    document.querySelectorAll('.add-to-wishlist').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const productId = parseInt(this.getAttribute('data-id'));
-            const productCard = this.closest('.product-card');
-            
-            // Get current wishlist from localStorage
-            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-            
-            // Check if product is already in wishlist
-            const existingIndex = wishlist.findIndex(item => item.id === productId);
-            
-            if (existingIndex >= 0) {
-                // Remove from wishlist
-                wishlist.splice(existingIndex, 1);
-                productCard.classList.remove('in-wishlist');
-                this.innerHTML = '<i class="far fa-heart"></i>';
-            } else {
-                // Add to wishlist
-                wishlist.push({ id: productId });
-                productCard.classList.add('in-wishlist');
-                this.innerHTML = '<i class="fas fa-heart"></i>';
-            }
-            
-            // Save to localStorage
-            localStorage.setItem('wishlist', JSON.stringify(wishlist));
-            
-            // Update wishlist count
-            updateWishlistCount();
-        });
+    sizeOptions.appendChild(sizeBtn);
+  });
+  
+  // Update color options
+  const colorOptions = document.getElementById('modalColorOptions');
+  colorOptions.innerHTML = '';
+  product.colors.forEach(color => {
+    const colorBtn = document.createElement('button');
+    colorBtn.className = 'color-btn';
+    colorBtn.style.backgroundColor = getColorValue(color);
+    colorBtn.title = color;
+    colorBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('selected'));
+      this.classList.add('selected');
+      selectedColor = color;
     });
-    
-    // Add to cart buttons
-    document.querySelectorAll('.add-to-cart').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const productId = parseInt(this.getAttribute('data-id'));
-            
-            // Get current cart from localStorage
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            
-            // Check if product is already in cart
-            const existingItem = cart.find(item => item.id === productId);
-            
-            if (existingItem) {
-                // Increase quantity
-                existingItem.quantity += 1;
-            } else {
-                // Add new item to cart
-                cart.push({
-                    id: productId,
-                    quantity: 1,
-                    size: 'M', // Default size
-                    color: '#3a3a3a' // Default color
-                });
-            }
-            
-            // Save to localStorage
-            localStorage.setItem('cart', JSON.stringify(cart));
-            
-            // Update cart count
-            updateCartCount();
-            
-            // Show added to cart message
-            showAddedToCartMessage();
-        });
+    colorOptions.appendChild(colorBtn);
+  });
+  
+  // Update SKU and category
+  document.getElementById('modalProductSKU').textContent = product.sku;
+  document.getElementById('modalProductCategory').textContent = product.category;
+  
+  // Update wishlist button state
+  updateWishlistButton();
+  
+  // Reset quantity
+  document.getElementById('productQuantity').value = 1;
+  
+  // Show modal
+  document.getElementById('productModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+// Helper function to get color values
+function getColorValue(color) {
+  const colors = {
+    'Blue': '#3498db',
+    'Black': '#2c3e50',
+    'White': '#ecf0f1',
+    'Ivory': '#fffff0',
+    'Dark Blue': '#1a237e',
+    'Brown': '#795548',
+    'Red': '#e53935',
+    'Green': '#43a047',
+    'Yellow': '#fdd835'
+  };
+  return colors[color] || color;
+}
+
+// Update wishlist button state
+function updateWishlistButton() {
+  if (!currentModalProduct) return;
+  
+  const isInWishlist = wishlist.includes(currentModalProduct.id);
+  const icon = isInWishlist ? 'fas' : 'far';
+  
+  document.getElementById('addToWishlistModal').innerHTML = `
+    <i class="${icon} fa-heart"></i> ${isInWishlist ? 'Remove from' : 'Add to'} Wishlist
+  `;
+}
+
+// Toggle wishlist status
+function toggleWishlist(productId) {
+  const index = wishlist.indexOf(productId);
+  
+  if (index >= 0) {
+    wishlist.splice(index, 1);
+  } else {
+    wishlist.push(productId);
+  }
+  
+  updateWishlistButton();
+  
+  document.querySelectorAll(`.add-to-wishlist[data-id="${productId}"] i`).forEach(icon => {
+    icon.classList.toggle('far');
+    icon.classList.toggle('fas');
+  });
+}
+
+// Add product to cart
+function addToCart(productId, quantity = 1) {
+  const product = products.find(p => p.id === productId);
+  if (!product) return;
+  
+  const existingItemIndex = cart.findIndex(item => 
+    item.id === product.id && 
+    item.size === selectedSize && 
+    item.color === selectedColor
+  );
+  
+  if (existingItemIndex >= 0) {
+    cart[existingItemIndex].quantity += quantity;
+  } else {
+    cart.push({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image,
+      size: selectedSize,
+      color: selectedColor,
+      quantity: quantity
     });
+  }
+  
+  showCartNotification(product);
+}
+
+// Show cart notification
+function showCartNotification(product) {
+  const notification = document.createElement('div');
+  notification.className = 'cart-notification';
+  notification.innerHTML = `
+    <p>${product.title} added to cart!</p>
+    <a href="cart.html">View Cart</a>
+  `;
+  document.body.appendChild(notification);
+  
+  setTimeout(() => notification.classList.add('show'), 10);
+  setTimeout(() => {
+    notification.classList.remove('show');
+    setTimeout(() => notification.remove(), 300);
+  }, 3000);
+}
+
+// Initialize product system
+export function initProductSystem() {
+  const modal = document.getElementById('productModal');
+  if (!modal) return;
+  
+  // Modal functionality
+  document.getElementById('closeModal').addEventListener('click', function() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Quantity selector
+  document.getElementById('decreaseQty').addEventListener('click', function() {
+    const quantityInput = document.getElementById('productQuantity');
+    let value = parseInt(quantityInput.value);
+    if (value > 1) quantityInput.value = value - 1;
+  });
+  
+  document.getElementById('increaseQty').addEventListener('click', function() {
+    const quantityInput = document.getElementById('productQuantity');
+    let value = parseInt(quantityInput.value);
+    quantityInput.value = value + 1;
+  });
+  
+  // Add to cart from modal
+  document.getElementById('addToCartModal').addEventListener('click', function() {
+    if (!currentModalProduct) return;
+    const quantity = parseInt(document.getElementById('productQuantity').value);
+    addToCart(currentModalProduct.id, quantity);
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  
+  // Add to wishlist from modal
+  document.getElementById('addToWishlistModal').addEventListener('click', function() {
+    if (!currentModalProduct) return;
+    toggleWishlist(currentModalProduct.id);
+  });
 }
