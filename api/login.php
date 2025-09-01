@@ -35,7 +35,7 @@ try {
         throw new Exception("Password is required");
     }
 
-    $stmt = $conn->prepare("SELECT id, name, email, password FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, name, email, password, role FROM users WHERE email = ?");
     $stmt->execute([$email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -53,6 +53,7 @@ try {
         'user_id' => $user['id'],
         'user_email' => $user['email'],
         'user_name' => $user['name'],
+        'user_role' => $user['role'] ?? 'user',
         'user_authenticated' => true,
         'last_activity' => time()
     ];

@@ -16,7 +16,7 @@ $stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
 $stmt->execute([$_SESSION['user_id']]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Validate current password if changing password
+// Validate current password only if changing password
 if (!empty($data['new_password'])) {
     if (empty($data['current_password']) || !password_verify($data['current_password'], $user['password'])) {
         echo json_encode(['status' => 'error', 'message' => 'Current password is incorrect']);
