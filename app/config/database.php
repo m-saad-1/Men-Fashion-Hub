@@ -1,10 +1,10 @@
 <?php
 // db_connection.php
 
-$host = 'localhost';
-$dbname = 'fashionhub-old';
-$username = 'root';
-$password = '';
+$host = getenv('DB_HOST') ?: 'localhost';
+$dbname = getenv('DB_NAME') ?: 'fashionhub-old';
+$username = getenv('DB_USER') ?: 'root';
+$password = getenv('DB_PASS') !== false ? getenv('DB_PASS') : '';
 
 // Create connection
 $conn = new mysqli($host, $username, $password, $dbname);
