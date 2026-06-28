@@ -144,8 +144,9 @@ try {
         <div class="product-details" style="margin-top: 40px;">
             <!-- Product Gallery -->
             <div class="product-gallery">
-                <div class="gallery-main">
-                    <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['title']); ?>" id="mainProductImage">
+                <div class="gallery-main" style="position: relative;">
+                    <div class="skeleton" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+                    <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['title']); ?>" id="mainProductImage" fetchpriority="high" onload="this.previousElementSibling.style.display='none'" style="position:relative; z-index:2;">
                 </div>
             </div>
             
@@ -332,8 +333,9 @@ try {
                                     <?php echo ucfirst(htmlspecialchars($relatedProduct['badge'])); ?>
                                 </div>
                             <?php endif; ?>
-                            <div class="product-image">
-                                <img src="<?php echo htmlspecialchars($relatedProduct['image']); ?>" alt="<?php echo htmlspecialchars($relatedProduct['title']); ?>">
+                            <div class="product-image" style="position: relative;">
+                                <div class="skeleton" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+                                <img src="<?php echo htmlspecialchars($relatedProduct['image']); ?>" alt="<?php echo htmlspecialchars($relatedProduct['title']); ?>" loading="lazy" onload="this.previousElementSibling.style.display='none'" style="position:absolute; z-index:2;">
                             </div>
                             <div class="product-info">
                                 <h3 class="product-title"><?php echo htmlspecialchars($relatedProduct['title']); ?></h3>

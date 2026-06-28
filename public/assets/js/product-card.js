@@ -57,7 +57,8 @@ function createProductCard(product) {
     productCard.innerHTML = `
         <div class="product-image">
             ${badge}
-            <img src="${product.image}" alt="${product.title}">
+            <div class="skeleton" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+            <img src="${product.image}" alt="${product.title}" loading="lazy" onload="this.previousElementSibling.style.display='none'" style="position:relative; z-index:2;">
             <div class="product-actions">
                 <button class="action-btn quick-view"><i class="far fa-eye"></i></button>
                 <button class="action-btn add-to-wishlist"><i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i></button>

@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FashionHub - Premium Clothing</title>
     <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    
-    
 
     <style>
           :root {
@@ -1405,37 +1403,45 @@ p {
         <div class="container">
             <h2 class="section-title">Shop by Category</h2>
             <div class="category-grid">
-                <a href="shop.php?category=shirts" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Shirts">
-                    <h3>Shirts</h3>
+                <a href="shop.php?category=shirts" class="category-card" style="position: relative;">
+                    <div class="skeleton" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+                    <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Shirts" loading="lazy" onload="this.previousElementSibling.style.display='none'" style="position:relative; z-index:2;">
+                    <h3 style="z-index: 3;">Shirts</h3>
                 </a>
-                <a href="shop.php?category=jeans" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Jeans">
-                    <h3>Jeans</h3>
+                <a href="shop.php?category=jeans" class="category-card" style="position: relative;">
+                    <div class="skeleton" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+                    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Jeans" loading="lazy" onload="this.previousElementSibling.style.display='none'" style="position:relative; z-index:2;">
+                    <h3 style="z-index: 3;">Jeans</h3>
                 </a>
-                <a href="shop.php?category=jackets" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80" alt="Jackets">
-                    <h3>Jackets</h3>
+                <a href="shop.php?category=jackets" class="category-card" style="position: relative;">
+                    <div class="skeleton" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80" alt="Jackets" loading="lazy" onload="this.previousElementSibling.style.display='none'" style="position:relative; z-index:2;">
+                    <h3 style="z-index: 3;">Jackets</h3>
                 </a>
-                <a href="shop.php?category=dresses" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Dresses">
-                    <h3>Dresses</h3>
+                <a href="shop.php?category=dresses" class="category-card" style="position: relative;">
+                    <div class="skeleton" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Dresses" loading="lazy" onload="this.previousElementSibling.style.display='none'" style="position:relative; z-index:2;">
+                    <h3 style="z-index: 3;">Dresses</h3>
                 </a>
-                <a href="shop.php?category=accessories" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1038&q=80" alt="Accessories">
-                    <h3>Accessories</h3>
+                <a href="shop.php?category=accessories" class="category-card" style="position: relative;">
+                    <div class="skeleton" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+                    <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1038&q=80" alt="Accessories" loading="lazy" onload="this.previousElementSibling.style.display='none'" style="position:relative; z-index:2;">
+                    <h3 style="z-index: 3;">Accessories</h3>
                 </a>
-                <a href="shop.php?category=activewear" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Activewear">
-                    <h3>Activewear</h3>
+                <a href="shop.php?category=activewear" class="category-card" style="position: relative;">
+                    <div class="skeleton" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Activewear" loading="lazy" onload="this.previousElementSibling.style.display='none'" style="position:relative; z-index:2;">
+                    <h3 style="z-index: 3;">Activewear</h3>
                 </a>
-                <a href="shop.php?category=footwear" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1001&q=80" alt="Footwear">
-                    <h3>Footwear</h3>
+                <a href="shop.php?category=footwear" class="category-card" style="position: relative;">
+                    <div class="skeleton" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+                    <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1001&q=80" alt="Footwear" loading="lazy" onload="this.previousElementSibling.style.display='none'" style="position:relative; z-index:2;">
+                    <h3 style="z-index: 3;">Footwear</h3>
                 </a>
-                <a href="shop.php?category=formal" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Formal Wear">
-                    <h3>Formal Wear</h3>
+                <a href="shop.php?category=formal" class="category-card" style="position: relative;">
+                    <div class="skeleton" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Formal Wear" loading="lazy" onload="this.previousElementSibling.style.display='none'" style="position:relative; z-index:2;">
+                    <h3 style="z-index: 3;">Formal Wear</h3>
                 </a>
             </div>
         </div>

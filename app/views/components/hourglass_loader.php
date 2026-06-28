@@ -39,11 +39,12 @@ window.hideLoader = function() {
 };
 
 (function() {
-    // Fade out when window has fully loaded
-    if (document.readyState === 'complete') {
+    // Fade out as soon as HTML is loaded, even if images are still loading (performance boost)
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
         window.hideLoader();
     } else {
-        window.addEventListener('load', window.hideLoader);
+        document.addEventListener('DOMContentLoaded', window.hideLoader);
+        window.addEventListener('load', window.hideLoader); // fallback
     }
 })();
 </script>
